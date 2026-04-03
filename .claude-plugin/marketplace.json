@@ -1,0 +1,17 @@
+{
+  "owner": {
+    "name": "toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "plugins": [
+    {
+      "name": "flutter-ddd",
+      "description": "Write Flutter/Dart code following Domain-Driven Design (DDD) with Clean Architecture. BLoC, dartz Either/Failure, freezed, retrofit, injectable, auto_route.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "flutter-ddd"
+      }
+    }
+  ]
+}
