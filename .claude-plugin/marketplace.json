@@ -12,6 +12,15 @@
         "repo": "toeydevelopment/skills",
         "path": "flutter-ddd"
       }
+    },
+    {
+      "name": "line-dev-expert",
+      "description": "Build LINE Platform applications — Messaging API bots, LIFF/Mini Apps, LINE Login, LINE Pay, Rich Menus, Flex Messages, CRM, loyalty programs, and Thailand market integrations.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "line-dev-expert"
+      }
     }
   ]
 }
