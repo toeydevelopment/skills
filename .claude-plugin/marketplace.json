@@ -21,6 +21,24 @@
         "repo": "toeydevelopment/skills",
         "path": "line-dev-expert"
       }
+    },
+    {
+      "name": "company-craft",
+      "description": "Set up and optimize AI agent companies on Paperclip. Bootstrap: analyze workspace, detect tech stack, generate agent instructions, build org chart, seed tickets. Audit: review roster, rebalance workloads, check ticket quality, suggest hires/cuts.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "company-craft"
+      }
+    },
+    {
+      "name": "task-authoring",
+      "description": "Standards for creating high-quality tickets that cheaper-model worker agents can execute efficiently. Definition of Ready, Definition of Done, acceptance criteria, self-test instructions, and context optimization. Install on lead agents.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "task-authoring"
+      }
     }
   ]
 }
