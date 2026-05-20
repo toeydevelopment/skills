@@ -8,6 +8,7 @@ Custom skills for [Claude Code](https://claude.ai/code) and [Paperclip](https://
 |---|---|---|
 | **[company-craft](company-craft/)** | Set up and optimize AI agent companies on Paperclip | Workspace analysis, agent instruction generation, org charts, task quality standards, ongoing audits |
 | **[task-authoring](task-authoring/)** | Ticket quality standards for lead agents | DoR, DoD, acceptance criteria, self-test, context optimization for cheap-model workers |
+| **[spec-first-delivery](spec-first-delivery/)** | Documentation-first delivery pipeline — docs, task DAG, then outside-in TDD | ADR, PRD, diagrams, protobuf/API spec, anti-slop docs, compounding LLM wiki, atomic green commits |
 | **[flutter-ddd](flutter-ddd/)** | Flutter/Dart with Domain-Driven Design (DDD) Clean Architecture | BLoC, dartz, freezed, retrofit, injectable, auto_route — 4-layer architecture |
 | **[flutter-responsive-ui](flutter-responsive-ui/)** | Expert-level Flutter responsive UI with zero overflow errors | Constraint-aware layouts, responsive breakpoints, safe Flex/Scroll nesting, adaptive navigation |
 | **[line-dev-expert](line-dev-expert/)** | LINE Platform development expertise | Messaging API, LIFF/Mini App, LINE Login, LINE Pay, Rich Menus, Flex Messages |
@@ -19,6 +20,7 @@ Custom skills for [Claude Code](https://claude.ai/code) and [Paperclip](https://
 ```bash
 npx skills add toeydevelopment/skills@company-craft -g -y
 npx skills add toeydevelopment/skills@task-authoring -g -y
+npx skills add toeydevelopment/skills@spec-first-delivery -g -y
 npx skills add toeydevelopment/skills@flutter-ddd -g -y
 npx skills add toeydevelopment/skills@flutter-responsive-ui -g -y
 npx skills add toeydevelopment/skills@line-dev-expert -g -y
@@ -86,6 +88,18 @@ Every ticket must include:
 - **Context Package** — 3-zone model: inline critical context, precise file references, no exploration needed
 
 Install on all lead agents so these standards are enforced on every ticket creation.
+
+### spec-first-delivery
+
+**Turns a feature request into design docs, a task DAG, and a TDD implementation — in that order, autonomously.** Stops AI agents from jumping straight to code and producing slop.
+
+Three phases run back-to-back, never out of order:
+
+- **Phase 1 — Documentation** — ADR (Nygard 5-section), PRD, diagrams (mermaid sequence/context, dbml ER), API definition (protobuf when the project uses proto, otherwise a human-readable markdown spec), anti-slop docs (`CONTEXT.md` glossary, `CONVENTIONS.md` guardrails, `TEST-STRATEGY.md`), and a compounding LLM wiki
+- **Phase 2 — Task Planning** — an `agents:`/`workflow:` task DAG with `[id:xxx]` tasks and per-leaf `@agent` tags
+- **Phase 3 — Implementation** — one git worktree per feature, outside-in TDD (RED E2E with database reconciliation, then unit TDD), atomic build-green commits keyed to task ids, linear history
+
+References: `phase-1-documentation.md`, `phase-2-task-planning.md`, `phase-3-implementation.md`, `protobuf-conventions.md`, `wiki-pattern.md`
 
 ### flutter-ddd
 

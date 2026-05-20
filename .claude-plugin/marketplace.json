@@ -39,6 +39,15 @@
         "repo": "toeydevelopment/skills",
         "path": "task-authoring"
       }
+    },
+    {
+      "name": "spec-first-delivery",
+      "description": "Documentation-first delivery pipeline. Produces ADR, PRD, diagrams, API/protobuf, anti-slop docs and a compounding LLM wiki, then a dependency-ordered task DAG, then implements with outside-in TDD in a git worktree with atomic green commits.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "spec-first-delivery"
+      }
     }
   ]
 }
