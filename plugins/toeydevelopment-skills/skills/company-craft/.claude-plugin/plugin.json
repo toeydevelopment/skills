@@ -1,0 +1,11 @@
+{
+  "name": "company-craft",
+  "version": "0.1.0",
+  "description": "Bootstrap and audit AI agent companies on Paperclip.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT"
+}

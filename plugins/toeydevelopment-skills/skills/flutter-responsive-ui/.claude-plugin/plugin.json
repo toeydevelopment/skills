@@ -1,0 +1,11 @@
+{
+  "name": "flutter-responsive-ui",
+  "version": "0.1.0",
+  "description": "Build responsive Flutter interfaces without layout overflow errors.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT"
+}

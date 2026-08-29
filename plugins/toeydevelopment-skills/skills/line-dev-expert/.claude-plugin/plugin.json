@@ -1,0 +1,11 @@
+{
+  "name": "line-dev-expert",
+  "version": "0.1.0",
+  "description": "Build LINE Messaging API, LIFF, Login, Pay, and Mini App integrations.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT"
+}

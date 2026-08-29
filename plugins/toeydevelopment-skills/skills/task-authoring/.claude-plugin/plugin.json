@@ -1,0 +1,11 @@
+{
+  "name": "task-authoring",
+  "version": "0.1.0",
+  "description": "Format verified work as executable tickets for worker agents.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT"
+}

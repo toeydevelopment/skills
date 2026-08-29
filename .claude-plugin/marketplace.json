@@ -1,16 +1,36 @@
 {
+  "name": "toeydevelopment-skills",
+  "description": "Reusable engineering, product, Flutter, and LINE development skills for Claude Code.",
   "owner": {
     "name": "toeydevelopment",
     "url": "https://github.com/toeydevelopment"
   },
   "plugins": [
     {
+      "name": "toeydevelopment-skills",
+      "description": "Install every Toeydevelopment skill as one Claude Code plugin.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "plugins/toeydevelopment-skills"
+      }
+    },
+    {
       "name": "flutter-ddd",
       "description": "Write Flutter/Dart code following Domain-Driven Design (DDD) with Clean Architecture. BLoC, dartz Either/Failure, freezed, retrofit, injectable, auto_route.",
       "source": {
         "source": "github",
         "repo": "toeydevelopment/skills",
-        "path": "flutter-ddd"
+        "path": "plugins/toeydevelopment-skills/skills/flutter-ddd"
+      }
+    },
+    {
+      "name": "flutter-responsive-ui",
+      "description": "Build responsive Flutter interfaces with constraint-aware layouts, adaptive breakpoints, safe scrolling, and zero overflow errors.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "plugins/toeydevelopment-skills/skills/flutter-responsive-ui"
       }
     },
     {
@@ -19,7 +39,7 @@
       "source": {
         "source": "github",
         "repo": "toeydevelopment/skills",
-        "path": "line-dev-expert"
+        "path": "plugins/toeydevelopment-skills/skills/line-dev-expert"
       }
     },
     {
@@ -28,16 +48,25 @@
       "source": {
         "source": "github",
         "repo": "toeydevelopment/skills",
-        "path": "company-craft"
+        "path": "plugins/toeydevelopment-skills/skills/company-craft"
       }
     },
     {
       "name": "task-authoring",
-      "description": "Standards for creating high-quality tickets that cheaper-model worker agents can execute efficiently. Definition of Ready, Definition of Done, acceptance criteria, self-test instructions, and context optimization. Install on lead agents.",
+      "description": "Format already-verified work as high-quality tickets that worker agents can execute efficiently. Covers Definition of Ready, Definition of Done, acceptance criteria, self-test instructions, and context optimization.",
       "source": {
         "source": "github",
         "repo": "toeydevelopment/skills",
-        "path": "task-authoring"
+        "path": "plugins/toeydevelopment-skills/skills/task-authoring"
+      }
+    },
+    {
+      "name": "evidence-first-issue-authoring",
+      "description": "Investigate repositories and draft or audit evidence-grounded engineering issues. Separates observations, code facts, product decisions, hypotheses, and proposals; routes unverified work to investigation or decision issues.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "plugins/toeydevelopment-skills/skills/evidence-first-issue-authoring"
       }
     },
     {
@@ -46,7 +75,7 @@
       "source": {
         "source": "github",
         "repo": "toeydevelopment/skills",
-        "path": "spec-first-delivery"
+        "path": "plugins/toeydevelopment-skills/skills/spec-first-delivery"
       }
     }
   ]

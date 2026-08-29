@@ -5,13 +5,22 @@ description: >
   can execute efficiently. Covers Definition of Ready, Definition of Done,
   acceptance criteria, self-test instructions, and context optimization. Install
   on lead agents (CEO, CTO, PM, architect) who create or delegate work. Trigger
-  when creating tickets, delegating tasks, writing subtasks, or when a worker
-  flags a ticket as underspecified.
+  when formatting already-verified work, delegating tasks, writing subtasks, or
+  when a worker flags a ticket as underspecified. For repository investigation or
+  validation of an AI-proposed solution, use evidence-first-issue-authoring first.
 ---
 
 # Task Authoring — Ticket Quality Standards for Lead Agents
 
 You create tickets that **cheaper-model worker agents** execute. Every token you save them is money saved. Every ambiguity you leave costs a retry. Write tickets that a worker can start coding from immediately.
+
+## Boundary
+
+This skill packages work whose problem, expected behavior, and technical facts are
+already trusted. It does not prove repository claims or make an AI-generated solution
+correct. When the request starts from a symptom, feature idea, runtime observation, or
+unverified proposed fix, use `evidence-first-issue-authoring` before applying this
+ticket format.
 
 ## The Ticket Template
 

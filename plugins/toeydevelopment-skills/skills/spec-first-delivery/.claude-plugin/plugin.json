@@ -1,0 +1,11 @@
+{
+  "name": "spec-first-delivery",
+  "version": "0.1.0",
+  "description": "Deliver features through documentation, task planning, and outside-in TDD.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT"
+}

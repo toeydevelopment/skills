@@ -1,0 +1,38 @@
+{
+  "name": "toeydevelopment-skills",
+  "version": "0.1.0",
+  "description": "Reusable engineering, product, Flutter, and LINE development skills.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "homepage": "https://skills.sh/toeydevelopment/skills",
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "product-management",
+    "flutter",
+    "line",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Toeydevelopment Skills",
+    "shortDescription": "Engineering and product delivery workflows",
+    "longDescription": "Reusable skills for evidence-grounded issue authoring, task planning, spec-first delivery, Flutter, LINE, and agent-team operations.",
+    "developerName": "Toeydevelopment",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/toeydevelopment/skills",
+    "defaultPrompt": [
+      "Audit an AI-written engineering issue against the repository.",
+      "Plan a feature with evidence and testable acceptance criteria.",
+      "Choose the right Toeydevelopment skill for this task."
+    ],
+    "brandColor": "#1F6FEB"
+  }
+}

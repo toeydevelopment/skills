@@ -1,0 +1,11 @@
+{
+  "name": "flutter-ddd",
+  "version": "0.1.0",
+  "description": "Build Flutter features with Domain-Driven Design and Clean Architecture.",
+  "author": {
+    "name": "Toeydevelopment",
+    "url": "https://github.com/toeydevelopment"
+  },
+  "repository": "https://github.com/toeydevelopment/skills",
+  "license": "MIT"
+}

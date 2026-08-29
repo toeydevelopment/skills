@@ -1,150 +1,152 @@
 # Toeydevelopment Skills
 
-Custom skills for [Claude Code](https://claude.ai/code) and [Paperclip](https://paperclip.ing) — extend AI agents with domain-specific expertise, team orchestration, and development best practices.
+[![skills.sh](https://skills.sh/b/toeydevelopment/skills)](https://skills.sh/toeydevelopment/skills)
 
-## Available Skills
+Reusable agent skills for product, engineering, Flutter, LINE, and AI-team
+workflows. The repository supports three standard distribution paths:
 
-| Skill | Description | Key Focus |
-|---|---|---|
-| **[company-craft](company-craft/)** | Set up and optimize AI agent companies on Paperclip | Workspace analysis, agent instruction generation, org charts, task quality standards, ongoing audits |
-| **[task-authoring](task-authoring/)** | Ticket quality standards for lead agents | DoR, DoD, acceptance criteria, self-test, context optimization for cheap-model workers |
-| **[spec-first-delivery](spec-first-delivery/)** | Documentation-first delivery pipeline — docs, task DAG, then outside-in TDD | ADR, PRD, diagrams, protobuf/API spec, anti-slop docs, compounding LLM wiki, atomic green commits |
-| **[flutter-ddd](flutter-ddd/)** | Flutter/Dart with Domain-Driven Design (DDD) Clean Architecture | BLoC, dartz, freezed, retrofit, injectable, auto_route — 4-layer architecture |
-| **[flutter-responsive-ui](flutter-responsive-ui/)** | Expert-level Flutter responsive UI with zero overflow errors | Constraint-aware layouts, responsive breakpoints, safe Flex/Scroll nesting, adaptive navigation |
-| **[line-dev-expert](line-dev-expert/)** | LINE Platform development expertise | Messaging API, LIFF/Mini App, LINE Login, LINE Pay, Rich Menus, Flex Messages |
+- [`skills.sh`](https://skills.sh/) for individual or bulk skill installation.
+- A skills-only Codex plugin using `.codex-plugin/plugin.json`.
+- A Claude Code marketplace and plugin using `.claude-plugin/`.
 
-## Quick Start
+## Available skills
 
-### Install via Skills CLI (Recommended)
+| Skill | Purpose |
+|---|---|
+| [company-craft](plugins/toeydevelopment-skills/skills/company-craft/) | Bootstrap and audit AI agent companies on Paperclip. |
+| [evidence-first-issue-authoring](plugins/toeydevelopment-skills/skills/evidence-first-issue-authoring/) | Investigate repositories and draft or audit evidence-grounded engineering issues. |
+| [task-authoring](plugins/toeydevelopment-skills/skills/task-authoring/) | Format verified work as executable tickets for worker agents. |
+| [spec-first-delivery](plugins/toeydevelopment-skills/skills/spec-first-delivery/) | Deliver features through documentation, task planning, and outside-in TDD. |
+| [flutter-ddd](plugins/toeydevelopment-skills/skills/flutter-ddd/) | Build Flutter features with DDD and Clean Architecture. |
+| [flutter-responsive-ui](plugins/toeydevelopment-skills/skills/flutter-responsive-ui/) | Build responsive Flutter interfaces without layout overflows. |
+| [line-dev-expert](plugins/toeydevelopment-skills/skills/line-dev-expert/) | Build LINE Messaging API, LIFF, Login, Pay, and Mini App integrations. |
 
-```bash
-npx skills add toeydevelopment/skills@company-craft -g -y
-npx skills add toeydevelopment/skills@task-authoring -g -y
-npx skills add toeydevelopment/skills@spec-first-delivery -g -y
-npx skills add toeydevelopment/skills@flutter-ddd -g -y
-npx skills add toeydevelopment/skills@flutter-responsive-ui -g -y
-npx skills add toeydevelopment/skills@line-dev-expert -g -y
-```
+## Install with skills.sh
 
-### Install via Plugin Marketplace
-
-Inside Claude Code:
-
-```
-/plugin marketplace add toeydevelopment/skills
-/plugin install company-craft@toeydevelopment/skills
-```
-
-### Manual Installation (Project-Scoped)
-
-Copy a skill into your project's `.claude/skills/` directory:
+List the skills without installing anything:
 
 ```bash
-mkdir -p .claude/skills/company-craft/references
-curl -sL https://raw.githubusercontent.com/toeydevelopment/skills/main/company-craft/SKILL.md \
-  -o .claude/skills/company-craft/SKILL.md
-for ref in bootstrap-procedure agent-templates task-authoring-guide context-optimization audit-procedure org-patterns; do
-  curl -sL "https://raw.githubusercontent.com/toeydevelopment/skills/main/company-craft/references/${ref}.md" \
-    -o ".claude/skills/company-craft/references/${ref}.md"
-done
+npx skills add toeydevelopment/skills --list
 ```
 
-### Manual Installation (Global)
-
-Install to `~/.claude/skills/` to make skills available across all projects:
+Install one skill globally for Codex and Claude Code:
 
 ```bash
-mkdir -p ~/.claude/skills/company-craft/references
-# Same curl commands as above, targeting ~/.claude/skills/
+npx skills add toeydevelopment/skills \
+  --skill evidence-first-issue-authoring \
+  --global \
+  --agent codex \
+  --agent claude-code \
+  --yes
 ```
 
-## Skill Details
+Install every skill globally for Codex and Claude Code:
 
-### company-craft
+```bash
+npx skills add toeydevelopment/skills \
+  --skill '*' \
+  --global \
+  --agent codex \
+  --agent claude-code \
+  --yes
+```
 
-**Set up and optimize AI agent companies on Paperclip from any codebase.** Works with any tech stack — monorepos, single apps, backends, frontends, mobile, ML, and everything in between.
+Install every skill for every supported agent:
 
-Two modes:
+```bash
+npx skills add toeydevelopment/skills --all
+```
 
-- **Bootstrap** (first run) — Scans workspace, detects tech stack, maps surfaces to specialist agents, generates instruction files (AGENTS.md + SOUL.md + TOOLS.md), builds org chart, seeds initial tickets
-- **Audit** (ongoing) — Reviews agent roster vs. workspace, analyzes workloads, checks instruction freshness, spot-checks ticket quality, identifies gaps, recommends hires/cuts
+Use one skill without installing it:
 
-Key concepts:
-- **One agent per distinct tech surface** — a React app and a Flutter app get separate engineers
-- **Model tier alignment** — opus for decision-makers (CEO, CTO, PM), sonnet for implementers
-- **6 org patterns** — Solo, Small Team, Full Stack, Product-Led, Data/ML, Platform
+```bash
+npx skills use toeydevelopment/skills@evidence-first-issue-authoring
+```
 
-References: `bootstrap-procedure.md`, `agent-templates.md`, `org-patterns.md`, `audit-procedure.md`
+## Install as a Codex plugin
 
-### task-authoring
+Add the GitHub repository as a Codex marketplace, then install the bundle:
 
-**Companion skill for lead agents** (CEO, CTO, PM, architects) who create tickets for worker agents on cheaper models. Ensures every ticket is self-contained and executable.
+```bash
+codex plugin marketplace add toeydevelopment/skills --ref main
+codex plugin add toeydevelopment-skills@toeydevelopment-skills
+```
 
-Every ticket must include:
-- **Definition of Ready (DoR)** — preconditions before worker starts
-- **Definition of Done (DoD)** — concrete completion checklist
-- **Acceptance Criteria** — Given/When/Then with specific values
-- **Self-Test Instructions** — exact commands the worker runs to verify
-- **Context Package** — 3-zone model: inline critical context, precise file references, no exploration needed
+The plugin bundles every directory under
+`plugins/toeydevelopment-skills/skills/`. Start a new Codex task after
+installation so the newly installed skills are loaded.
 
-Install on all lead agents so these standards are enforced on every ticket creation.
+Inspect or refresh the marketplace with:
 
-### spec-first-delivery
+```bash
+codex plugin marketplace list
+codex plugin marketplace upgrade toeydevelopment-skills
+```
 
-**Turns a feature request into design docs, a task DAG, and a TDD implementation — in that order, autonomously.** Stops AI agents from jumping straight to code and producing slop.
+See the official OpenAI documentation for the
+[plugin manifest and marketplace format](https://developers.openai.com/plugins/build/plugins).
 
-Three phases run back-to-back, never out of order:
+## Install as a Claude Code plugin
 
-- **Phase 1 — Documentation** — ADR (Nygard 5-section), PRD, diagrams (mermaid sequence/context, dbml ER), API definition (protobuf when the project uses proto, otherwise a human-readable markdown spec), anti-slop docs (`CONTEXT.md` glossary, `CONVENTIONS.md` guardrails, `TEST-STRATEGY.md`), and a compounding LLM wiki
-- **Phase 2 — Task Planning** — an `agents:`/`workflow:` task DAG with `[id:xxx]` tasks and per-leaf `@agent` tags
-- **Phase 3 — Implementation** — one git worktree per feature, outside-in TDD (RED E2E with database reconciliation, then unit TDD), atomic build-green commits keyed to task ids, linear history
+Add the marketplace and install the bundle:
 
-References: `phase-1-documentation.md`, `phase-2-task-planning.md`, `phase-3-implementation.md`, `protobuf-conventions.md`, `wiki-pattern.md`
+```bash
+claude plugin marketplace add toeydevelopment/skills
+claude plugin install toeydevelopment-skills@toeydevelopment-skills
+```
 
-### flutter-ddd
+Claude can also install one skill as an individual plugin:
 
-Generates production-ready Flutter code following strict 4-layer DDD architecture:
+```bash
+claude plugin install evidence-first-issue-authoring@toeydevelopment-skills
+```
 
-- **Domain** — Entities, failures, facade interfaces (zero dependencies)
-- **Infrastructure** — DTOs, retrofit APIs, repositories, facade implementations
-- **Application** — BLoC/Cubit with freezed events/states
-- **Presentation** — Pages with AutoRouteWrapper, BlocBuilder/BlocListener
+Restart Claude Code after installing or updating a plugin.
 
-### flutter-responsive-ui
+## Example
 
-Prevents all common Flutter layout failures with constraint-aware patterns:
+After installing `evidence-first-issue-authoring`:
 
-- **8 Critical Safety Rules** — Covers Expanded in scrollables, TextField in Row, unbounded height, and more
-- **Overflow Prevention Catalog** — Every common overflow error with root cause and fix
-- **Responsive Breakpoints** — Material 3 window classes (Compact/Medium/Expanded/Large)
-- **9 Ready-to-Use Recipes** — Adaptive navigation, master-detail, responsive grid, forms, dialogs
-- **Safe Scroll Patterns** — Nested scrollables, slivers, TabBarView with lists
+```text
+Use $evidence-first-issue-authoring to investigate this reported problem and
+draft the correct issue type. Do not implement it.
+```
 
-### line-dev-expert
+The workflow returns one of four readiness outcomes: implementation-ready,
+investigation required, product decision required, or duplicate/superseded. It
+keeps observed facts, code-confirmed behavior, product decisions, hypotheses,
+and implementation proposals separate.
 
-Comprehensive LINE Platform development covering:
+## Repository layout
 
-- Messaging API, webhook handling, message types
-- LIFF/Mini App development and LINE Login
-- LINE Pay integration and Rich Menu management
-- Thailand market-specific patterns and CRM/loyalty programs
+```text
+plugins/toeydevelopment-skills/
+  skills/<skill-name>/SKILL.md       skills.sh and shared skill source
+  .codex-plugin/plugin.json          Codex bundle manifest
+  .claude-plugin/plugin.json         Claude bundle manifest
+.agents/plugins/marketplace.json     Codex marketplace
+.claude-plugin/marketplace.json      Claude marketplace
+```
 
-## How Skills Work
-
-Skills are `SKILL.md` files with YAML frontmatter that tell Claude **when** and **how** to apply domain-specific knowledge. Claude automatically activates the right skill based on your conversation context.
-
-Each skill contains:
-
-- **`SKILL.md`** — Main instructions with trigger conditions and critical rules
-- **`references/`** — Detailed reference documents loaded on-demand to save context
+The two plugin manifests reference the same `skills/` directory. Skill content
+is not duplicated between platforms.
 
 ## Contributing
 
-1. Create a directory: `your-skill-name/`
-2. Add `SKILL.md` with YAML frontmatter (`name`, `description`)
-3. Add detailed references in `references/` subdirectory
-4. Update `marketplace.json` and this README
+1. Add the skill under
+   `plugins/toeydevelopment-skills/skills/<skill-name>/SKILL.md`.
+2. Put optional supporting material in `references/`, `scripts/`, or `assets/`
+   inside that skill directory.
+3. Add the skill to the table above and the Claude marketplace when it should be
+   individually installable there.
+4. Run the distribution checks:
+
+```bash
+python3 scripts/validate_distribution.py
+npx skills add . --list
+claude plugin validate . --strict
+```
 
 ## License
 
-MIT
+[MIT](LICENSE)
