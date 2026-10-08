@@ -69,6 +69,11 @@ a cited number, a referenced issue. Mark each one:
 | **Stale** | It was true once. Give the real current path or symbol. |
 | **Unverified** | Could not be checked. Say why (needs prod data, other repo, a running test). |
 
+Count one claim per statement the issue itself makes; your own findings are
+evidence, not counted claims. A claim that depends on another repository (for
+example the web app) or on production data is **unverified** by default: say
+which, and list it once under "not checked". A moved path or shifted line range
+with the same behavior is **stale**, not wrong.
 Do not call something confirmed from a title or a guess. Reading code is not
 running it: say "from reading, not run". Stale paths are common after a refactor;
 a stale path with the right behavior is not a wrong issue, but it is a note.

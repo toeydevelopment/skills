@@ -101,6 +101,9 @@ Order of items:
 
 Rules:
 
+- Mark who answers each item: **lead** (order, ownership, split, linking an
+  epic) or **author** (policy and facts). Put lead items first. Suggested
+  defaults for author questions come from what the code does today, and say so.
 - Every item is answerable in one word or letter.
 - Show the suggested default so "go with defaults" is a valid reply.
 - Number once, continuously across issues, so "7 no" is unambiguous.

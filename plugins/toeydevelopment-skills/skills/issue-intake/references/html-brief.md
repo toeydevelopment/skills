@@ -22,7 +22,8 @@ github.com/cathrynlavery/diagram-design". Keep it.
    "no parent found" note when that is the result. Up to 9 nodes. For more
    issues, group into clusters and draw each cluster as one node, then add one
    detail diagram per cluster.
-4. **One card per issue**: the decision card fields (see
+4. **One card per issue** (evidence line: one plain sentence plus at most two
+   short file names; full `path:line` lists belong in the report, not the page): the decision card fields (see
    [card-and-report-format.md](card-and-report-format.md)) as a compact panel.
    Recommendation badge top right. Claims shown as four small counts.
 5. **Now versus wanted diagram** inside the card, only for a complex issue (state
