@@ -15,6 +15,7 @@ workflows. The repository supports three standard distribution paths:
 |---|---|
 | [company-craft](plugins/toeydevelopment-skills/skills/company-craft/) | Bootstrap and audit AI agent companies on Paperclip. |
 | [evidence-first-issue-authoring](plugins/toeydevelopment-skills/skills/evidence-first-issue-authoring/) | Investigate repositories and draft or audit evidence-grounded engineering issues. |
+| [issue-intake](plugins/toeydevelopment-skills/skills/issue-intake/) | Verify issues from non-technical authors against the code and return decision cards plus a visual HTML brief. |
 | [task-authoring](plugins/toeydevelopment-skills/skills/task-authoring/) | Format verified work as executable tickets for worker agents. |
 | [spec-first-delivery](plugins/toeydevelopment-skills/skills/spec-first-delivery/) | Deliver features through documentation, task planning, and outside-in TDD. |
 | [flutter-ddd](plugins/toeydevelopment-skills/skills/flutter-ddd/) | Build Flutter features with DDD and Clean Architecture. |
