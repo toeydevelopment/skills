@@ -70,6 +70,15 @@
       }
     },
     {
+      "name": "issue-intake",
+      "description": "Verify and audit issues opened by non-technical authors against the code, find the parent epic, relate the issues, and return decision cards plus a visual HTML brief with a numbered decide-and-discuss block. Knowledge only.",
+      "source": {
+        "source": "github",
+        "repo": "toeydevelopment/skills",
+        "path": "plugins/toeydevelopment-skills/skills/issue-intake"
+      }
+    },
+    {
       "name": "spec-first-delivery",
       "description": "Documentation-first delivery pipeline. Produces ADR, PRD, diagrams, API/protobuf, anti-slop docs and a compounding LLM wiki, then a dependency-ordered task DAG, then implements with outside-in TDD in a git worktree with atomic green commits.",
       "source": {
