@@ -22,7 +22,7 @@ github.com/cathrynlavery/diagram-design". Keep it.
    "no parent found" note when that is the result. Up to 9 nodes. For more
    issues, group into clusters and draw each cluster as one node, then add one
    detail diagram per cluster.
-4. **One card per issue**, phone-first order: title and recommendation badge,
+4. **One card per issue**, narrow-first order: title and recommendation badge,
    claim counts, problem, done-when, questions. Everything else (parent,
    affected, evidence, size/risk) sits inside `<details><summary>Evidence and
    details</summary>` so the card stays short. Long paths use `<code>` with
@@ -30,7 +30,7 @@ github.com/cathrynlavery/diagram-design". Keep it.
    short file names; full `path:line` lists belong in the report, not the page): the decision card fields (see
    [card-and-report-format.md](card-and-report-format.md)) as a compact panel.
    Recommendation badge top right. Claims shown as four small counts.
-5. **Now versus wanted diagram** inside the card (stacks vertically on a phone), only for a complex issue (state
+5. **Now versus wanted diagram** inside the card (stacks vertically when narrow), only for a complex issue (state
    change, multi-step flow, two systems). Two rows, "Now" and "Wanted", same
    shapes where nothing changes, accent on what changes. Skip it for a simple
    issue.
@@ -59,9 +59,13 @@ github.com/cathrynlavery/diagram-design". Keep it.
   at most 14 characters, on an opaque mask with a gap from the stroke.
 - Give each connector on a box edge its own attach point; do not stack strokes.
 - Diagrams are HTML boxes (flex rows of `.node` and `.edge`), not scaled SVG. A
-  scaled SVG shrinks its text below readable on a phone; never use one for the
-  overview map or a now-versus-wanted flow. One rule for every diagram: a row on
-  desktop, a vertical stack under 700px with the arrow turning to point down.
+  scaled SVG shrinks its text below readable on a narrow screen; never use one for the
+  overview map or a now-versus-wanted flow. One rule for every diagram: a row when its box is wide
+  enough, a vertical stack when it is not, the arrow turning to point down. The
+  switch is a container query in `em`, not a device width.
+  Layout is responsive at every width: no layout depends on one fixed pixel
+  width. Use fluid tools (`flex`, `grid` with `auto-fit` and `minmax`, `clamp`,
+  container queries in `em`) and never a rule tuned to one phone or one monitor.
   Give each diagram a `<figure role="group">` and a `.sr` `<figcaption>` that says
   what it shows. Use `minmax(0, 1fr)` grid tracks and `min-width: 0` for
   flex/grid children so long paths wrap instead of overflowing.
@@ -96,20 +100,22 @@ github.com/cathrynlavery/diagram-design". Keep it.
 
 ## Checks before hand-off
 
-Render the file twice with a headless browser (Playwright, chrome-devtools-axi,
-or Chromium `--screenshot`) and look at both screenshots:
+Render the file with a headless browser (Playwright, chrome-devtools-axi, or
+Chromium `--screenshot`) at three sample widths and look at the screenshots:
 
-- **390px wide** (phone, device scale 2, mobile emulation) and **1280px wide**
-  (desktop).
+- **360px** (small phone, device scale 2, mobile emulation), **768px** (tablet)
+  and **1280px** (desktop). These are samples, not targets: the layout must also
+  reflow smoothly at every width between and beyond them. Spot-check one odd
+  width (for example 540px or 1000px) when a diagram or card grid changed.
 - Text readable without zoom: body at least 15px, diagram labels at least 13px
   as rendered. Check `getComputedStyle` of text nodes if unsure.
 - No horizontal page scroll: `document.documentElement.scrollWidth` equals
-  `innerWidth` at both widths.
-- No clipped or overlapping text. Diagrams stacked on the phone, not shrunk. Decide
-  block items at least 44px tall.
+  `innerWidth` at every sample width, also with every `<details>` open.
+- No clipped or overlapping text. Diagrams stacked when narrow, not shrunk.
+  Decide block items at least 44px tall.
 - Every issue number in the page matches the report.
 - Every `path:line` in a card appears in the report as well.
 - A headless window may have a minimum width; if the screenshot is wider than
-  390px, render the file inside a 390px-wide iframe instead.
+  the sample, render the file inside an iframe of that width instead.
 - If `diagram-design` is installed, run its self-check script on the file.
-- Save both screenshots next to the brief.
+- Save the screenshots next to the brief.

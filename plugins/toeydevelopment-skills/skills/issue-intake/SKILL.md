@@ -144,8 +144,8 @@ Visual first, light text. Self-contained local HTML following the
 
 Required: an overview map of the issues (groups, dependencies, parent epic), a
 small now-versus-wanted diagram for each issue that is complex, a compact card
-per issue, and the decide block. It must read on a phone (about 390px) without
-zoom: diagrams stack vertically, cards lead with problem, badge and questions,
+per issue, and the decide block. It must be responsive at every width, from a small
+phone to a wide desktop, and read without zoom at each: diagrams stack vertically when narrow, cards lead with problem, badge and questions,
 evidence folds into `<details>`. Skip the diagram for a trivial issue; a card
 alone is enough.
 
@@ -181,10 +181,11 @@ Before handing off, check:
 - Each question is understandable by a non-engineer and changes a decision.
 - Exactly one recommendation per issue.
 - HTML opens offline and every diagram has a text caption for screen readers.
-- Phone check done: brief rendered at 390px and at 1280px (headless screenshot),
+- Responsive check done: brief rendered at sample widths 360, 768 and 1280px
+  (headless screenshots; samples only, the layout must be fluid between them),
   text readable without zoom (body 15px+, diagram labels 13px+), no horizontal
-  page scroll at either width, diagrams stacked rather than shrunk, long evidence
-  folded behind `<details>`. Both screenshots saved beside the brief.
+  page scroll at any sample, diagrams stacked rather than shrunk when narrow,
+  long evidence folded behind `<details>`. Screenshots saved beside the brief.
 - Nothing was written to the forge.
 
 If the brief would not let the reader decide and reply without opening the
