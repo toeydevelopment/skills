@@ -144,7 +144,9 @@ Visual first, light text. Self-contained local HTML following the
 
 Required: an overview map of the issues (groups, dependencies, parent epic), a
 small now-versus-wanted diagram for each issue that is complex, a compact card
-per issue, and the decide block. Skip the diagram for a trivial issue; a card
+per issue, and the decide block. It must read on a phone (about 390px) without
+zoom: diagrams stack vertically, cards lead with problem, badge and questions,
+evidence folds into `<details>`. Skip the diagram for a trivial issue; a card
 alone is enough.
 
 Present it through `lavish-axi <file>` when that tool exists, and use its poll
@@ -178,8 +180,11 @@ Before handing off, check:
 - "Not run" or "not checked" is stated wherever it applies.
 - Each question is understandable by a non-engineer and changes a decision.
 - Exactly one recommendation per issue.
-- HTML opens offline, has no horizontal page scroll, and every diagram has a
-  title and description for screen readers.
+- HTML opens offline and every diagram has a text caption for screen readers.
+- Phone check done: brief rendered at 390px and at 1280px (headless screenshot),
+  text readable without zoom (body 15px+, diagram labels 13px+), no horizontal
+  page scroll at either width, diagrams stacked rather than shrunk, long evidence
+  folded behind `<details>`. Both screenshots saved beside the brief.
 - Nothing was written to the forge.
 
 If the brief would not let the reader decide and reply without opening the
